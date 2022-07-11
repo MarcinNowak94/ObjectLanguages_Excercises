@@ -79,7 +79,12 @@ public class Main {
                 "Chose class excercise");
 
         switch (options[choice]){
-            case "Osoby": {new Osoby();}; break;
+            case "Osoby": {
+                int[] years={1999,2000,2001};
+                Osoby test=new Osoby("Jan","Kowalski", years);
+                JOptionPane.showMessageDialog(null,
+                (String)(test.getimie()+" "+test.getnazwisko()+" "+test.getrok()[1]));
+            }; break;
             case "Statki": {new Statki();}; break;
             case "Egzamin": {new Egzamin();}; break;
             case "Indeksy": {new Indeksy();}; break;
