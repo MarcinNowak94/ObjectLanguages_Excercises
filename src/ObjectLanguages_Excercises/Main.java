@@ -6,6 +6,12 @@ import javax.swing.JOptionPane;     //Windows and dialog boxes
 /*
 Exercises based on assignments available here
 https://tinyurl.com/arekjava
+
+Assignment Naming conventions (in comments)
+[year]_[set]_[assignment] , eg.: 2020_Z1_A1
+Year        2020
+Set         Z1
+Assignment  A1
 */
 public class Main {
     public static int Menu(String[] options, String title, String message){
@@ -23,7 +29,12 @@ public class Main {
 
     public static int Files() {
         String[] options = {
-                "Emerytura",
+                "Emerytura",        //2020_Z1_A1
+                "Kredyt",           //2020_Z1_D1
+                "Emerytura_2",      //2020_Z2_A1
+                "Kredyt_2",         //2020_Z2_B2
+                "Budynki",          //2020_Z2_D1
+                "Leki",             //2020_Z2_C2
                 "Return",
                 "Exit"
         };
@@ -32,7 +43,11 @@ public class Main {
                 "Chose file exercise");
 
         switch (options[choice]) {
-            case "Z1_A12020": { Files.Emerytura();}; break;
+            case "Emerytura": { Files.Emerytura();}; break;
+            case "Kredyt": {Files.Kredyt();}; break;
+            case "Emerytura_2": { Files.Emerytura_2();}; break;
+            case "Kredyt_2": {Files.Kredyt_2();}; break;
+            case "Budynki": {Files.Budynki();}; break;
             case "Return": { return 0;}
             case "Exit": { System.exit(0); /*exit program*/ }; break;
             default: {
@@ -49,7 +64,13 @@ public class Main {
 
     public static int Classes(){
         String[] options={
-                "Osoby",
+                "Osoby",            //2020_Z1_A1
+                "Statki",           //2020_Z1_C1
+                "Egzamin",          //2020_Z2_A2
+                "Indeksy",          //2020_Z2_B1
+                "Testy",            //2020_Z2_D2
+                "Skoki",            //2020_Z2_C1
+                "FunkcjaKwadratowa",//2018_Z1_Z2
                 "Return",
                 "Exit"
         };
@@ -58,7 +79,13 @@ public class Main {
                 "Chose class excercise");
 
         switch (options[choice]){
-            case "Osoby": {new Osoby();} break;
+            case "Osoby": {new Osoby();}; break;
+            case "Statki": {new Statki();}; break;
+            case "Egzamin": {new Egzamin();}; break;
+            case "Indeksy": {new Indeksy();}; break;
+            case "Testy": {new Testy();}; break;
+            case "Skoki": {new Skoki();}; break;
+            case "FunkcjaKwadratowa": {new FunkcjaKwadratowa();}; break;
             case "Return": {return 0;}
             case "Exit": { System.exit(0);}; break;
             default: {
@@ -73,10 +100,37 @@ public class Main {
         return 0;
     };
 
+    public static int CLIPrograms(){
+        String[] options={
+                "Palindromy",            //2018_Z1_Z1
+                "Return",
+                "Exit"
+        };
+        int choice = Menu(options,
+                "CLI Programs",
+                "Chose class excercise");
+
+        switch (options[choice]){
+            case "Palindromy": {Programs.Palindromy();}; break;
+            case "Return": {return 0;}
+            case "Exit": { System.exit(0);}; break;
+            default: {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Wrong choice somehow, pick once more",
+                        "Wrong choice",
+                        JOptionPane.WARNING_MESSAGE
+                );
+            };break;
+        }
+        return 0;
+    };
+
     public static void main(String[] args) {
 	    String[] options = {
                 "Files",
                 "Classes",
+                "CLI Programs",
                 "Exit"};
         int choice;
         do{
@@ -86,6 +140,7 @@ public class Main {
         switch (options[choice]) {
             case "Files": { Files();}; break;
             case "Classes": {Classes();}; break;
+            case "CLI Programs": {CLIPrograms();}; break;
             case "Exit": {System.exit(0); /*exit program*/}; break;
             default: {
                 JOptionPane.showMessageDialog(
