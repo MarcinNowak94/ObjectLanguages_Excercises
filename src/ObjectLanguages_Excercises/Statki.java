@@ -19,4 +19,40 @@ public class Statki {
      wykonującą strzał – parametrami są współrzędne strzału,
     wynikiem napis: ,,trafiony” lub ,,pudło”
      */
+
+    private String imie;
+    private String nazwisko;
+    private Boolean[][] field;
+
+    Statki(String firstname, String surname, int rows, int cols){
+      this.imie=firstname;
+      this.nazwisko=surname;
+      this.field= new Boolean[rows][cols];
+      //would be nice to initialize but non compulosry
+    };
+
+    public Boolean placeOnemast(int row, int col){
+      if(!(this.field[row][col]==Boolean.TRUE)){
+          this.field[row][col]=Boolean.TRUE;
+          return Boolean.TRUE;
+      };
+      return Boolean.FALSE;
+    };
+
+    public Boolean placetwoMast(int startrow, int startcol, int endrow, int endcol){
+        int rowdiff=Math.abs(startrow-endrow);
+        int coldiff=Math.abs(startcol-endcol);
+        //must be same row or same col, simplest naive solution (2, -3 will work too)
+        if((rowdiff+coldiff)==1){
+            this.field[startrow][startcol]=Boolean.TRUE;
+            this.field[endrow][endcol]=Boolean.TRUE;
+            return Boolean.TRUE;
+        };
+        return Boolean.FALSE;
+    };
+
+    public String shot(int row, int col){
+      if(this.field[row][col]==Boolean.TRUE) {return "trafiony";};
+      return "pudło";
+    };
 }

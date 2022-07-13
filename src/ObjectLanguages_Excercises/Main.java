@@ -94,7 +94,19 @@ public class Main {
                 JOptionPane.showMessageDialog(null,
                 (String)(test.getimie()+" "+test.getnazwisko()+" "+test.getrok()[1]));
             }; break;
-            case "Statki": {new Statki();}; break;
+            case "Statki": {
+                Statki game = new Statki("John", "Doe", 5,5);
+                Boolean one = game.placeOnemast(1,1);
+                Boolean two = game.placetwoMast(2,2,2,3);
+                String shot= game.shot(2,2);
+
+                JOptionPane.showMessageDialog(null,
+                "One mast:\t"+one.toString()
+                        +"\nTwo mast:\t"+two.toString()
+                +"\nShot at [2][2]:\t"+shot
+                        );
+
+            }; break;
             case "Egzamin": {new Egzamin();}; break;
             case "Indeksy": {
                 Indeksy index= new Indeksy(20,2);
