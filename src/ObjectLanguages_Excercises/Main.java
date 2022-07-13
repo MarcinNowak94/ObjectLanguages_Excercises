@@ -1,7 +1,7 @@
 package ObjectLanguages_Excercises;
 
 import javax.swing.JOptionPane;     //Windows and dialog boxes
-
+import static java.lang.System.out;
 
 /*
 Exercises based on assignments available here
@@ -43,7 +43,16 @@ public class Main {
                 "Chose file exercise");
 
         switch (options[choice]) {
-            case "Emerytura": { Files.Emerytura();}; break;
+            case "Emerytura": {
+                try {
+                    out.println("prawie");
+                    Files.Emerytura("src/emerytura.txt");
+                    out.println("zyje");
+                }
+                catch(Exception e) {
+                    out.println("chuja");
+                };
+            }; break;
             case "Kredyt": {Files.Kredyt();}; break;
             case "Emerytura_2": { Files.Emerytura_2();}; break;
             case "Kredyt_2": {Files.Kredyt_2();}; break;
@@ -87,7 +96,9 @@ public class Main {
             }; break;
             case "Statki": {new Statki();}; break;
             case "Egzamin": {new Egzamin();}; break;
-            case "Indeksy": {new Indeksy();}; break;
+            case "Indeksy": {
+                Indeksy index= new Indeksy(20,2);
+            }; break;
             case "Testy": {new Testy();}; break;
             case "Skoki": {new Skoki();}; break;
             case "FunkcjaKwadratowa": {new FunkcjaKwadratowa();}; break;

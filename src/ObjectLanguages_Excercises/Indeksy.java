@@ -15,4 +15,18 @@ public class Indeksy {
     • void piszDane(int student) – wyświetla na konsolę oceny studentów (w jednym wierszu: numer studenta,
     lista ocen, zaliczony rok) rozdzielone myślnikami.
      */
+
+    //Solution by Mordej
+    private float[][] moduly;
+
+    Indeksy(int liczba_studentow, int liczba_modulow)
+    {
+        this.moduly = new float[liczba_studentow][liczba_modulow];
+        for(int i=0; i<moduly.length; i++)
+        {
+            for(int j=0; j<liczba_modulow;j++)
+                moduly[i][j] = 0;
+        }
+    }
+
 }

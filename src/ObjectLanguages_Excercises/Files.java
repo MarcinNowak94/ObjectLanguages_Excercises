@@ -1,7 +1,15 @@
 package ObjectLanguages_Excercises;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.List;
+import java.util.ArrayList;
+
 public class Files {
-    public static void Emerytura(){
+    //Solution by Mordej
+    public static void Emerytura(String plik) throws Exception{
         /*
          2020_Z1_A1
          Dany jest plik danych o strukturze:
@@ -17,7 +25,52 @@ public class Files {
          osoby mającej najwięcej lat do emerytury (dowolnej osoby, gdy jest
          ich więcej).
          */
-    }
+            var inputFile = new BufferedReader(new FileReader(plik));
+            String line;
+            List<String> tablica=new ArrayList<String>();
+
+            while(( line = inputFile.readLine()) != null)
+            {
+                tablica.add(line);
+            }
+
+            int age = 0;
+            String buffor_age = "";
+
+            for(int i=0; i<tablica.size(); i++)
+            {
+                if((tablica.get(i)).equals("K"))
+                {
+                    int d = Integer.parseInt(tablica.get(i+2));
+                    age = 67 - d;
+                    age = 60 - age;
+                    buffor_age += age;
+                    tablica.set(i+2, buffor_age);
+                }
+                else if((tablica.get(i)).equals("M"))
+                {
+                    int d = Integer.parseInt(tablica.get(i+2));
+                    age = 67 - d;
+                    age = 65 - age;
+                    buffor_age += age;
+                    tablica.set(i+2, buffor_age);
+                }
+                buffor_age = "";
+            }
+
+            try {
+                BufferedWriter out = new BufferedWriter(new FileWriter("src/test.txt"));
+                for (String item : tablica) {
+                    out.write((item) + "\n");
+                }
+                out.flush();
+                out.close();
+            }
+            catch(Exception blad)
+            {
+                System.out.println("Blad zapisu");
+            }
+    };
 
     public static void Kredyt(){
         /*
