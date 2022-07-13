@@ -105,9 +105,18 @@ public class Main {
                         +"\nTwo mast:\t"+two.toString()
                 +"\nShot at [2][2]:\t"+shot
                         );
-
             }; break;
-            case "Egzamin": {new Egzamin();}; break;
+            case "Egzamin": {
+                Egzamin exam = new Egzamin(2,3);
+                exam.wpiszOcene(0,0, 3);
+                exam.wpiszOcene(0,1, 4);
+                exam.wpiszOcene(0,2, 2);
+
+                exam.wpiszOcene(1,0, 5);
+                exam.wpiszOcene(1,1, 5);
+                exam.wpiszOcene(1,2, 5);
+                exam.piszDane();
+            }; break;
             case "Indeksy": {
                 Indeksy index= new Indeksy(20,2);
             }; break;
