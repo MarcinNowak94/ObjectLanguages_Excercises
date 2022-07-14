@@ -53,7 +53,7 @@ public class Main {
                     out.println("chuja");
                 };
             }; break;
-            case "Kredyt": {Files.Kredyt();}; break;
+            case "Kredyt": {Files.Kredyt("2020_Z1_D1_Kredyt.txt");}; break;
             case "Emerytura_2": { Files.Emerytura_2();}; break;
             case "Kredyt_2": {Files.Kredyt_2();}; break;
             case "Budynki": {Files.Budynki();}; break;

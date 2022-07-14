@@ -1,0 +1,4 @@
+Rick Sanchez 20000.0 4000.0 18
+Rick Astley 15000.0 10000.50 30
+Three Dog 500000 3500.75 42
+Lord Farquad 250.75 11.15 27

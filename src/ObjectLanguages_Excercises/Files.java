@@ -72,7 +72,7 @@ public class Files {
             }
     };
 
-    public static void Kredyt(){
+    public static String Kredyt(String file){
         /*
         2020_Z1_D1
         Dany jest plik danych o strukturze:
@@ -88,7 +88,9 @@ public class Files {
         łańcuch znaków, zawierający imię i nazwisko osoby z największym
         proponowanym kredytem (dowolnejosoby, gdy jest ich więcej).
          */
+        String highest_credit ="Instructions unclear for now I will skip this assignment";
 
+        return highest_credit;
     }
 
     public static void Emerytura_2(){
